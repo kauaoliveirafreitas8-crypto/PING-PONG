@@ -164,9 +164,6 @@ export const PricingSection: React.FC = () => {
           {/* Basic Plan Card */}
           <div className="rounded-3xl bg-white border-2 border-slate-200 p-6 md:p-10 shadow-md text-center hover:border-slate-300 transition-all flex flex-col justify-between">
             <div>
-              <div className="inline-block px-4 py-1 rounded-full bg-slate-100 text-slate-700 font-black text-xs uppercase tracking-wider mb-2">
-                ACESSO ESSENCIAL
-              </div>
               <h3 className="font-black text-2xl md:text-3xl text-[#0A192F] uppercase">
                 PLANO BÁSICO
               </h3>
@@ -231,15 +228,22 @@ export const PricingSection: React.FC = () => {
           </div>
 
           {/* Complete Plan Card */}
-          <div className="relative rounded-3xl bg-white border-[3px] border-[#0066CC] p-6 md:p-10 shadow-2xl text-center lg:scale-[1.02] ring-4 ring-[#0066CC]/10 flex flex-col justify-between">
+          <div
+            id="plano-completo"
+            className="relative rounded-3xl bg-white border-[3px] border-[#0066CC] p-6 md:p-10 shadow-2xl text-center lg:scale-[1.02] ring-4 ring-[#0066CC]/10 flex flex-col justify-between scroll-mt-8"
+          >
             <div>
-              <div className="-mx-6 md:-mx-10 -mt-6 md:-mt-10 rounded-t-[20px] bg-[#0066CC] text-white text-center py-3.5 px-4 font-black uppercase tracking-wide text-sm md:text-base shadow-md">
+              <div
+                id="mais-completo"
+                className="-mx-6 md:-mx-10 -mt-6 md:-mt-10 rounded-t-[20px] bg-[#0066CC] text-white text-center py-3.5 px-4 font-black uppercase tracking-wide text-sm md:text-base shadow-md scroll-mt-6 sm:scroll-mt-8"
+              >
                 ⭐ MAIS COMPLETO
               </div>
 
-              <div className="mt-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#16A34A] text-white font-bold text-xs uppercase tracking-wider">
-                <Check className="w-4 h-4" />
-                <span>+100 FICHAS + BÔNUS</span>
+              <div className="mt-6">
+                <h3 className="font-black text-xl sm:text-2xl md:text-3xl text-[#0A192F] uppercase tracking-tight whitespace-nowrap">
+                  PLANO COMPLETO <span className="text-[#0066CC]">+BÔNUS</span>
+                </h3>
               </div>
 
               <div className="mt-6 flex justify-center">

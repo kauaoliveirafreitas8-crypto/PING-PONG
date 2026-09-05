@@ -84,7 +84,7 @@ export const WhoIsItForSection: React.FC<WhoIsItForSectionProps> = ({
           <div className="mt-6 flex justify-center">
             <a
               id="who-is-it-for-cta-btn"
-              href="#planos"
+              href="#mais-completo"
               onClick={onCtaClick}
               className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wider text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] active:translate-y-[4px] active:shadow-[0_2px_0_0_#004F9F] transition-all cursor-pointer animate-cta-pulse"
             >

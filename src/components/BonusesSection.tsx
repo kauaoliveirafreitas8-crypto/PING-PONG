@@ -12,9 +12,6 @@ export const BonusesSection: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 sm:mb-10">
-          <span className="inline-block text-[#38BDF8] font-bold text-xs sm:text-sm uppercase tracking-widest mb-1.5">
-            CONTEÚDO COMPLEMENTAR EXCLUSIVO
-          </span>
           <h2 className="font-black text-2xl sm:text-3xl md:text-4xl text-white tracking-tight uppercase">
             E NÃO PARA POR AÍ...
           </h2>

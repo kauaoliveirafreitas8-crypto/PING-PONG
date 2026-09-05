@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { faqList } from "../data";
 
-export const FaqSection: React.FC = () => {
+interface FaqSectionProps {
+  onCtaClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}
+
+export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
@@ -52,6 +56,22 @@ export const FaqSection: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* CTA Button below FAQ */}
+        <div className="mt-10 sm:mt-12 text-center max-w-xl mx-auto">
+          <a
+            id="faq-cta-btn"
+            href="#mais-completo"
+            onClick={onCtaClick}
+            className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wider text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] active:translate-y-[4px] active:shadow-[0_2px_0_0_#004F9F] transition-all cursor-pointer animate-cta-pulse"
+          >
+            <span>QUERO O PLANO COMPLETO + BÔNUS</span>
+            <ArrowRight className="w-5 h-5 shrink-0" strokeWidth={3} />
+          </a>
+          <p className="mt-3 text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            🔒 Acesso Imediato no E-mail • 7 Dias de Garantia
+          </p>
         </div>
       </div>
     </section>

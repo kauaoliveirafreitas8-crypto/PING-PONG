@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick }) => {
             <div className="mt-6 sm:mt-8 flex w-full justify-center lg:justify-start">
               <a
                 id="hero-cta-btn"
-                href="#planos"
+                href="#mais-completo"
                 onClick={onCtaClick}
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-4.5 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer animate-cta-pulse"
               >

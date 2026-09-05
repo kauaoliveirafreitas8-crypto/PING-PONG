@@ -258,7 +258,7 @@ export const faqList: FaqItem[] = [
   },
   {
     q: "Como recebo o material?",
-    a: "Após a confirmação do pagamento, o acesso será enviado conforme o sistema de entrega informado na oferta.",
+    a: "Após a confirmação do pagamento, o acesso será enviado automaticamente no seu e-mail.",
   },
   {
     q: "O acesso é vitalício?",

@@ -17,20 +17,29 @@ import { FaqSection } from "./components/FaqSection";
 import { FooterSection } from "./components/FooterSection";
 
 export default function App() {
-  const scrollToPlans = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToCompletePlan = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const plansElement = document.getElementById("planos");
-    if (plansElement) {
-      plansElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    const targetElement =
+      document.getElementById("mais-completo") ||
+      document.getElementById("plano-completo");
+    if (targetElement) {
+      const yOffset = -24;
+      const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else {
+      const plansElement = document.getElementById("planos");
+      if (plansElement) {
+        plansElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
   return (
     <main className="min-h-screen bg-white">
       <AnnouncementBar />
-      <HeroSection onCtaClick={scrollToPlans} />
+      <HeroSection onCtaClick={scrollToCompletePlan} />
       <MarqueeSection />
-      <WhoIsItForSection onCtaClick={scrollToPlans} />
+      <WhoIsItForSection onCtaClick={scrollToCompletePlan} />
       <TargetAudienceSection />
       <ContentSection />
       <BonusesSection />
@@ -39,7 +48,7 @@ export default function App() {
         <GuaranteeSection />
       </div>
       <div className="content-auto">
-        <FaqSection />
+        <FaqSection onCtaClick={scrollToCompletePlan} />
       </div>
       <div className="content-auto">
         <FooterSection />
