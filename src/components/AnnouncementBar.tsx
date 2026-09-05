@@ -1,0 +1,27 @@
+import React from "react";
+
+export const AnnouncementBar: React.FC = () => {
+  return (
+    <div
+      id="top-announcement-bar"
+      className="w-full bg-[#061426] text-[#38BDF8] border-b border-[#0091FF]/30 text-center text-[13px] sm:text-sm font-bold tracking-wide py-2.5 px-4 flex items-center justify-center gap-2"
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+      <span className="uppercase tracking-wider">
+        OFERTA DISPONÍVEL APENAS HOJE
+      </span>
+    </div>
+  );
+};

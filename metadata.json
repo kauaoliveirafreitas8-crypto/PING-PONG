@@ -1,0 +1,6 @@
+{
+  "name": "+100 Fichas Visuais de Aulas Prontas para Tênis de Mesa",
+  "description": "Pare de perder tempo pensando qual treino aplicar. Tenha uma coleção de aulas organizadas em fichas visuais para tênis de mesa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
