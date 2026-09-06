@@ -19,11 +19,9 @@ export const GuaranteeSection: React.FC = () => {
             className="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-sm"
           />
           <div className="text-center md:text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-black text-xs uppercase tracking-wider mb-2.5">
-              🛡️ GARANTIA INCONDICIONAL DE 7 DIAS
-            </span>
-            <h3 className="font-black text-xl md:text-2xl text-[#0A192F] uppercase">
-              CONHEÇA O MATERIAL POR 7 DIAS
+            <h3 className="font-black text-xl md:text-2xl text-[#0A192F] leading-tight">
+              Garantia Incondicional
+              <span className="block text-[#0066CC]">7 Dias</span>
             </h3>
             <p className="mt-2.5 text-slate-600 font-normal text-sm sm:text-base leading-relaxed">
               Você terá 7 dias para acessar e avaliar o material. Se dentro desse período você decidir que o produto não é adequado para sua necessidade, poderá solicitar o reembolso conforme as condições da oferta.

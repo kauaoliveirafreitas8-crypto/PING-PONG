@@ -167,9 +167,6 @@ export const PricingSection: React.FC = () => {
               <h3 className="font-black text-2xl md:text-3xl text-[#0A192F] uppercase">
                 PLANO BÁSICO
               </h3>
-              <p className="mt-1 text-[#0066CC] font-bold text-sm uppercase">
-                +100 FICHAS VISUAIS DE AULAS PRONTAS
-              </p>
 
               <div className="mt-6 flex justify-center">
                 <div className="w-full max-w-[240px] rounded-xl overflow-hidden shadow border border-slate-100">
@@ -237,13 +234,16 @@ export const PricingSection: React.FC = () => {
                 id="mais-completo"
                 className="-mx-6 md:-mx-10 -mt-6 md:-mt-10 rounded-t-[20px] bg-[#0066CC] text-white text-center py-3.5 px-4 font-black uppercase tracking-wide text-sm md:text-base shadow-md scroll-mt-6 sm:scroll-mt-8"
               >
-                ⭐ MAIS COMPLETO
+                ⭐ MAIS VENDIDO
               </div>
 
               <div className="mt-6">
                 <h3 className="font-black text-xl sm:text-2xl md:text-3xl text-[#0A192F] uppercase tracking-tight whitespace-nowrap">
                   PLANO COMPLETO <span className="text-[#0066CC]">+BÔNUS</span>
                 </h3>
+                <p className="mt-1 text-[#0066CC] font-bold text-sm uppercase">
+                  +100 FICHAS VISUAIS DE AULAS PRONTAS
+                </p>
               </div>
 
               <div className="mt-6 flex justify-center">

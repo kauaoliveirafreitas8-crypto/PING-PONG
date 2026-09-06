@@ -11,7 +11,9 @@ import { TargetAudienceSection } from "./components/TargetAudienceSection";
 import { WhoIsItForSection } from "./components/WhoIsItForSection";
 import { ContentSection } from "./components/ContentSection";
 import { BonusesSection } from "./components/BonusesSection";
+import { WhyChooseSection } from "./components/WhyChooseSection";
 import { PricingSection } from "./components/PricingSection";
+import { HowToReceiveSection } from "./components/HowToReceiveSection";
 import { GuaranteeSection } from "./components/GuaranteeSection";
 import { FaqSection } from "./components/FaqSection";
 import { FooterSection } from "./components/FooterSection";
@@ -42,8 +44,12 @@ export default function App() {
       <WhoIsItForSection onCtaClick={scrollToCompletePlan} />
       <TargetAudienceSection />
       <ContentSection />
+      <WhyChooseSection />
       <BonusesSection />
       <PricingSection />
+      <div className="content-auto">
+        <HowToReceiveSection />
+      </div>
       <div className="content-auto">
         <GuaranteeSection />
       </div>

@@ -271,13 +271,12 @@ export const faqList: FaqItem[] = [
 ];
 
 export const basicPlanFeatures = [
-  "+100 fichas visuais de aulas prontas",
+  "+100 Fichas Visuais de Aulas Prontas",
   "Diagramas das atividades com trajetórias e zonas",
   "Sequências de execução passo a passo",
-  "Metas objetivas de treino",
   "Pontos de observação e correção técnica",
-  "Progressões e regressões para cada nível",
-  "Acesso imediato após confirmação",
+  "Acesso imediato",
+  "Acesso vitalício",
 ];
 
 export const completePlanFeatures: PlanFeature[] = [
