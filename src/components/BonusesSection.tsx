@@ -37,14 +37,14 @@ export const BonusesSection: React.FC = () => {
 
               {/* Graphic Mockup Header */}
               {bonus.image ? (
-                <div className="py-4 px-3 sm:py-5 sm:px-4 bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] border-b border-slate-100 flex items-center justify-center min-h-[170px] sm:min-h-[200px] overflow-hidden">
+                <div className="py-5 px-4 sm:py-7 sm:px-6 bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#E2E8F0]/60 border-b border-slate-100 flex items-center justify-center min-h-[240px] sm:min-h-[290px] md:min-h-[320px] overflow-hidden">
                   <img
                     src={bonus.image}
                     alt={bonus.title}
                     loading="lazy"
                     decoding="async"
                     referrerPolicy="no-referrer"
-                    className="max-h-40 sm:max-h-48 w-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)] transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-56 sm:h-64 md:h-72 object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.22)] transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               ) : (
