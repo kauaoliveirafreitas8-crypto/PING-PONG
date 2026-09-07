@@ -11,7 +11,7 @@
 
 .animate-marquee {
   will-change: transform;
-  animation: 26s linear infinite marquee;
+  animation: 36s linear infinite marquee;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
@@ -19,6 +19,28 @@
 
 .animate-marquee:hover,
 .pause-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-reverse {
+  will-change: transform;
+  animation: 36s linear infinite marquee-reverse;
+  transform: translate3d(-50%, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.animate-marquee-reverse:hover,
+.pause-marquee-reverse {
   animation-play-state: paused;
 }
 

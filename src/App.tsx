@@ -8,6 +8,7 @@ import { AnnouncementBar } from "./components/AnnouncementBar";
 import { HeroSection } from "./components/HeroSection";
 import { MarqueeSection } from "./components/MarqueeSection";
 import { TargetAudienceSection } from "./components/TargetAudienceSection";
+import { SecondMarqueeSection } from "./components/SecondMarqueeSection";
 import { WhoIsItForSection } from "./components/WhoIsItForSection";
 import { ContentSection } from "./components/ContentSection";
 import { BonusesSection } from "./components/BonusesSection";
@@ -42,6 +43,7 @@ export default function App() {
       <MarqueeSection />
       <WhoIsItForSection onCtaClick={scrollToCompletePlan} />
       <TargetAudienceSection />
+      <SecondMarqueeSection />
       <ContentSection />
       <BonusesSection />
       <PricingSection />
