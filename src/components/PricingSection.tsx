@@ -2,6 +2,7 @@ import React from "react";
 import { Check, Gift } from "lucide-react";
 import {
   assets,
+  checkoutLinks,
   basicPlanFeatures,
   completePlanFeatures,
 } from "../data";
@@ -79,13 +80,15 @@ export const PricingSection: React.FC = () => {
                 PAGAMENTO ÚNICO • ACESSO IMEDIATO
               </p>
 
-              <button
-                type="button"
+              <a
                 id="basic-plan-cta"
+                href={checkoutLinks.basicPlan}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-4.5 sm:py-5 min-h-[58px] rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] sm:shadow-[0_7px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[3px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer"
               >
                 QUERO O PLANO BÁSICO →
-              </button>
+              </a>
             </div>
           </div>
 
@@ -189,13 +192,15 @@ export const PricingSection: React.FC = () => {
                 OU PARCELADO NO CARTÃO DE CRÉDITO
               </p>
 
-              <button
-                type="button"
+              <a
                 id="complete-plan-cta"
+                href={checkoutLinks.completePlan}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-4.5 sm:py-5 min-h-[58px] rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] sm:shadow-[0_7px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[3px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer animate-cta-pulse"
               >
                 QUERO O PLANO COMPLETO →
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -35,8 +35,8 @@ export const assets = {
 };
 
 export const checkoutLinks = {
-  basicPlan: "",
-  completePlan: "",
+  basicPlan: "https://pay.kiwify.com.br/PfJbIyE",
+  completePlan: "https://pay.kiwify.com.br/ACB7a3k",
 };
 
 export const drillExamples: DrillExample[] = [
