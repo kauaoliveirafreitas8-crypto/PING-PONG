@@ -162,24 +162,24 @@ export const PricingSection: React.FC = () => {
                 PLANO BÁSICO
               </h3>
 
-              <div className="mt-4 sm:mt-6 flex justify-center">
-                <div className="relative w-full max-w-[220px] sm:max-w-[240px] flex items-center justify-center">
+              <div className="mt-4 sm:mt-6 -mx-2 sm:-mx-4 md:-mx-6 flex justify-center">
+                <div className="relative w-full max-w-xl flex items-center justify-center">
                   {/* Brilho sutil azul meio escuro quase sumindo ao redor do mockup */}
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-[#002B5C]/12 blur-xl pointer-events-none"
+                    className="absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-[#002B5C]/12 blur-2xl pointer-events-none"
                   />
                   <img
                     loading="lazy"
                     decoding="async"
                     src={assets.basicPlanMockup}
                     alt="Plano Básico - +100 Fichas Visuais"
-                    width={400}
-                    height={400}
+                    width={800}
+                    height={600}
                     className="relative z-10 w-full h-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
                     style={{
                       filter:
-                        "drop-shadow(0 10px 20px rgba(0, 37, 82, 0.22)) drop-shadow(0 0 16px rgba(0, 43, 92, 0.14))",
+                        "drop-shadow(0 14px 28px rgba(0, 37, 82, 0.28)) drop-shadow(0 0 22px rgba(0, 43, 92, 0.18))",
                     }}
                     onError={(e) => {
                       const target = e.currentTarget;
@@ -255,8 +255,8 @@ export const PricingSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-4 sm:mt-6 flex justify-center">
-                <div className="relative w-full max-w-[250px] sm:max-w-[290px] flex items-center justify-center">
+              <div className="mt-4 sm:mt-6 -mx-2 sm:-mx-4 md:-mx-6 flex justify-center">
+                <div className="relative w-full max-w-xl flex items-center justify-center">
                   {/* Destaque / Brilho Diferenciado multicamadas */}
                   {/* Camada 1: Aura respiratória azul royal e ciano vibrante */}
                   <div
@@ -270,15 +270,15 @@ export const PricingSection: React.FC = () => {
                   {/* Camada 2: Toque sutil de brilho dourado dos bônus */}
                   <div
                     aria-hidden="true"
-                    className="absolute -top-2 -right-2 w-28 h-28 rounded-full bg-amber-400/20 blur-xl pointer-events-none"
+                    className="absolute -top-3 -right-3 w-36 h-36 rounded-full bg-amber-400/20 blur-xl pointer-events-none"
                   />
                   <img
                     loading="lazy"
                     decoding="async"
                     src={assets.completePlanMockup}
                     alt="Plano Completo + Bônus"
-                    width={400}
-                    height={400}
+                    width={800}
+                    height={600}
                     className="relative z-10 w-full h-auto object-contain transition-transform duration-300 hover:scale-[1.03]"
                     style={{
                       filter:
