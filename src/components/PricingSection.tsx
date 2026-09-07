@@ -1,147 +1,12 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Clock, Check, Gift } from "lucide-react";
+import React from "react";
+import { Check, Gift } from "lucide-react";
 import {
   assets,
-  checkoutLinks,
   basicPlanFeatures,
   completePlanFeatures,
 } from "../data";
 
 export const PricingSection: React.FC = () => {
-  const todayFormatted = new Date().toLocaleDateString("pt-BR");
-
-  const getTrackedParams = (): Record<string, string> => {
-    const params: Record<string, string> = {};
-    if (typeof window === "undefined") return params;
-
-    try {
-      const keys = [
-        "utm_source",
-        "utm_medium",
-        "utm_campaign",
-        "utm_content",
-        "utm_term",
-        "fbclid",
-        "gclid",
-        "click_id",
-        "src",
-        "sck",
-        "xcod",
-      ];
-      for (const k of keys) {
-        const val =
-          localStorage.getItem(`lt_fwd_${k}`) || localStorage.getItem(k);
-        if (val) params[k] = val;
-      }
-      const ltUtms = localStorage.getItem("_lt_utms");
-      if (ltUtms) {
-        try {
-          const parsed = JSON.parse(ltUtms);
-          Object.assign(params, parsed);
-        } catch {
-          // ignore parsing error
-        }
-      }
-    } catch {
-      // ignore storage error
-    }
-
-    try {
-      const cookieUtms = document.cookie.match(/(?:^|; )_lt_utms=([^;]+)/);
-      if (cookieUtms) {
-        try {
-          const parsed = JSON.parse(decodeURIComponent(cookieUtms[1]));
-          Object.assign(params, parsed);
-        } catch {
-          // ignore cookie parsing error
-        }
-      }
-      const clickIdCookie = document.cookie.match(
-        /(?:^|; )_lt_click_id=([^;]+)/
-      );
-      if (clickIdCookie && !params.click_id) {
-        params.click_id = decodeURIComponent(clickIdCookie[1]);
-      }
-    } catch {
-      // ignore cookie error
-    }
-
-    try {
-      new URLSearchParams(window.location.search).forEach((val, key) => {
-        if (val) params[key] = val;
-      });
-    } catch {
-      // ignore url error
-    }
-
-    return params;
-  };
-
-  const buildTrackedUrl = (baseUrl: string, fallbackSrc: string): string => {
-    if (typeof window === "undefined") return baseUrl;
-    try {
-      const url = new URL(baseUrl, window.location.href);
-      const params = getTrackedParams();
-
-      if (!url.searchParams.has("src") || url.searchParams.get("src") === "") {
-        url.searchParams.set("src", params.src || fallbackSrc);
-      }
-      if (!url.searchParams.has("sck") || url.searchParams.get("sck") === "") {
-        url.searchParams.set("sck", params.sck || fallbackSrc);
-      }
-      if (
-        !url.searchParams.has("utm_content") ||
-        url.searchParams.get("utm_content") === ""
-      ) {
-        url.searchParams.set("utm_content", params.utm_content || fallbackSrc);
-      }
-
-      for (const p in params) {
-        if (params[p] && !url.searchParams.has(p)) {
-          url.searchParams.set(p, params[p]);
-        }
-      }
-
-      return url.toString();
-    } catch {
-      return baseUrl;
-    }
-  };
-
-  const [basicUrl, setBasicUrl] = useState(checkoutLinks.basicPlan);
-  const [completeUrl, setCompleteUrl] = useState(checkoutLinks.completePlan);
-
-  const refreshUrls = useCallback(() => {
-    setBasicUrl(buildTrackedUrl(checkoutLinks.basicPlan, "plano_basico"));
-    setCompleteUrl(buildTrackedUrl(checkoutLinks.completePlan, "plano_completo"));
-  }, []);
-
-  useEffect(() => {
-    refreshUrls();
-    const timer = setTimeout(refreshUrls, 600);
-    return () => clearTimeout(timer);
-  }, [refreshUrls]);
-
-  const handleCheckoutClick = (planName: string, planPrice: number) => {
-    try {
-      const win = window as any;
-      if (typeof win.fbq === "function") {
-        win.fbq("track", "InitiateCheckout", {
-          content_name: planName,
-          content_category: "Tênis de Mesa",
-          value: planPrice,
-          currency: "BRL",
-          num_items: 1,
-        });
-      }
-      if (win.LowTrack && typeof win.LowTrack.trackIC === "function") {
-        win.LowTrack.trackIC();
-      }
-    } catch (err) {
-      console.warn("Tracking dispatch error:", err);
-    }
-  };
-
   return (
     <section id="planos" className="relative bg-white py-10 sm:py-12 lg:py-16 px-3.5 sm:px-6">
       <div className="max-w-6xl mx-auto">
@@ -214,22 +79,13 @@ export const PricingSection: React.FC = () => {
                 PAGAMENTO ÚNICO • ACESSO IMEDIATO
               </p>
 
-              <a
+              <button
+                type="button"
                 id="basic-plan-cta"
-                href={basicUrl}
-                data-href={basicUrl}
-                data-url={basicUrl}
-                data-checkout-url={basicUrl}
-                onMouseEnter={refreshUrls}
-                onFocus={refreshUrls}
-                onPointerDown={refreshUrls}
-                onClick={() => handleCheckoutClick("Plano Básico", 27.9)}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-4.5 sm:py-5 min-h-[58px] rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] sm:shadow-[0_7px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[3px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer"
               >
                 QUERO O PLANO BÁSICO →
-              </a>
+              </button>
             </div>
           </div>
 
@@ -315,9 +171,14 @@ export const PricingSection: React.FC = () => {
             </div>
 
             <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100">
-              <p className="text-rose-500 line-through text-xs sm:text-base font-bold uppercase">
-                DE R$ 147,00 POR APENAS:
-              </p>
+              <div className="flex items-center justify-center gap-2 flex-wrap">
+                <p className="text-rose-500 line-through text-xs sm:text-base font-bold uppercase">
+                  DE R$ 147,00 POR APENAS:
+                </p>
+                <span className="px-2.5 py-0.5 rounded-full bg-[#16A34A]/10 text-[#15803D] border border-[#16A34A]/25 text-xs font-black uppercase tracking-wide">
+                  ECONOMIZE R$ 99,10
+                </span>
+              </div>
               <div className="mt-1 leading-none">
                 <span className="text-5xl sm:text-6xl md:text-7xl font-black text-[#0066CC] tracking-tight">
                   R$ 47,90
@@ -328,22 +189,13 @@ export const PricingSection: React.FC = () => {
                 OU PARCELADO NO CARTÃO DE CRÉDITO
               </p>
 
-              <a
+              <button
+                type="button"
                 id="complete-plan-cta"
-                href={completeUrl}
-                data-href={completeUrl}
-                data-url={completeUrl}
-                data-checkout-url={completeUrl}
-                onMouseEnter={refreshUrls}
-                onFocus={refreshUrls}
-                onPointerDown={refreshUrls}
-                onClick={() => handleCheckoutClick("Plano Completo", 47.9)}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-4.5 sm:py-5 min-h-[58px] rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] sm:shadow-[0_7px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[3px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer animate-cta-pulse"
               >
                 QUERO O PLANO COMPLETO →
-              </a>
+              </button>
             </div>
           </div>
         </div>

@@ -35,8 +35,8 @@ export const assets = {
 };
 
 export const checkoutLinks = {
-  basicPlan: "https://pay.kiwify.com.br/TcnGXRt?src=plano_basico&sck=plano_basico",
-  completePlan: "https://pay.kiwify.com.br/i32sxoH?src=plano_completo&sck=plano_completo",
+  basicPlan: "",
+  completePlan: "",
 };
 
 export const drillExamples: DrillExample[] = [
@@ -293,10 +293,10 @@ export const completePlanFeatures: PlanFeature[] = [
   { text: "Metas de treino e pontos de observação", isBonus: false },
   { text: "Progressões, regressões e rodízios de alunos", isBonus: false },
   { text: "Acesso imediato no celular, tablet e PC", isBonus: false },
-  { text: "BÔNUS 1: Guia Prático de Saque & 3ª Bola", isBonus: true },
-  { text: "BÔNUS 2: Guia de Aulas Prontas", isBonus: true },
-  { text: "BÔNUS 3: Guia Tático contra Pinos & Defesa", isBonus: true },
-  { text: "BÔNUS 4: Aquecimento Específico & Footwork", isBonus: true },
-  { text: "BÔNUS 5: Modelos de Torneios & Disputas Rápidas", isBonus: true },
-  { text: "BÔNUS 6: Checklist de Avaliação Técnico-Tática", isBonus: true },
+  { text: "BÔNUS 01: Guia Prático de Saque & 3ª Bola", isBonus: true },
+  { text: "BÔNUS 02: Guia de Aulas Prontas", isBonus: true },
+  { text: "BÔNUS 03: Guia Tático contra Pinos & Defesa", isBonus: true },
+  { text: "BÔNUS 04: Aquecimento Específico & Footwork", isBonus: true },
+  { text: "BÔNUS 05: Modelos de Torneios & Disputas Rápidas", isBonus: true },
+  { text: "BÔNUS 06: Checklist de Avaliação Técnico-Tática", isBonus: true },
 ];

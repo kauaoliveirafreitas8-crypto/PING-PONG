@@ -31,7 +31,7 @@ export const BonusesSection: React.FC = () => {
               <div className="bg-[#0066CC] py-1.5 sm:py-2 px-3 sm:px-4 text-center">
                 <span className="inline-flex items-center gap-1.5 text-white font-black text-xs sm:text-sm tracking-wider uppercase">
                   <Gift className="w-3.5 h-3.5" />
-                  BÔNUS #{bonus.n}
+                  BÔNUS {String(bonus.n).padStart(2, "0")}
                 </span>
               </div>
 
