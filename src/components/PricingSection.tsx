@@ -67,7 +67,7 @@ export const PricingSection: React.FC = () => {
             </div>
 
             <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100">
-              <p className="text-slate-400 line-through text-xs sm:text-sm uppercase font-semibold">
+              <p className="text-rose-500 line-through text-xs sm:text-base font-bold uppercase">
                 DE R$ 47,90 POR:
               </p>
               <div className="mt-1 leading-none">

@@ -4,7 +4,7 @@ export const AnnouncementBar: React.FC = () => {
   return (
     <div
       id="top-announcement-bar"
-      className="w-full bg-[#061426] border-b border-[#0091FF]/30 text-center text-[11.5px] sm:text-sm font-bold tracking-wide py-2 sm:py-2.5 px-3 sm:px-4 flex items-center justify-center gap-2"
+      className="w-full bg-[#FEF2F2] border-b border-[#FECACA] text-center text-[11.5px] sm:text-sm font-bold tracking-wide py-2 sm:py-2.5 px-3 sm:px-4 flex items-center justify-center gap-2 shadow-2xs"
     >
       <svg
         width="15"
@@ -15,12 +15,12 @@ export const AnnouncementBar: React.FC = () => {
         strokeWidth="2.4"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="shrink-0 text-[#FF2828]"
+        className="shrink-0 text-[#DC2626]"
       >
         <circle cx="12" cy="12" r="10" />
         <polyline points="12 6 12 12 16 14" />
       </svg>
-      <span className="uppercase tracking-wider text-[#FF2828] font-black">
+      <span className="uppercase tracking-wider text-[#DC2626] font-black">
         OFERTA DISPONÍVEL APENAS HOJE
       </span>
     </div>
