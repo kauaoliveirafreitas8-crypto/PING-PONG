@@ -25,7 +25,7 @@ export const BonusesSection: React.FC = () => {
           {bonusList.map((bonus, idx) => (
             <div
               key={bonus.n}
-              className="rounded-2xl bg-white shadow-lg overflow-hidden flex flex-col border border-slate-200 hover:-translate-y-1 transition-all duration-200"
+              className="group rounded-2xl bg-white shadow-lg overflow-hidden flex flex-col border border-slate-200 hover:-translate-y-1 hover:shadow-xl transition-all duration-200"
             >
               {/* Card Top Banner */}
               <div className="bg-[#0066CC] py-1.5 sm:py-2 px-3 sm:px-4 text-center">
@@ -35,12 +35,25 @@ export const BonusesSection: React.FC = () => {
                 </span>
               </div>
 
-              {/* Graphic Icon Header */}
-              <div className="py-3 sm:py-4 bg-[#F8FAFC] border-b border-slate-100 flex items-center justify-center">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#0066CC]/10 text-[#0066CC] flex items-center justify-center text-xl sm:text-2xl shadow-inner">
-                  {bonusIcons[idx % bonusIcons.length]}
+              {/* Graphic Mockup Header */}
+              {bonus.image ? (
+                <div className="py-4 px-3 sm:py-5 sm:px-4 bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] border-b border-slate-100 flex items-center justify-center min-h-[170px] sm:min-h-[200px] overflow-hidden">
+                  <img
+                    src={bonus.image}
+                    alt={bonus.title}
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
+                    className="max-h-40 sm:max-h-48 w-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)] transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-              </div>
+              ) : (
+                <div className="py-3 sm:py-4 bg-[#F8FAFC] border-b border-slate-100 flex items-center justify-center">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#0066CC]/10 text-[#0066CC] flex items-center justify-center text-xl sm:text-2xl shadow-inner">
+                    {bonusIcons[idx % bonusIcons.length]}
+                  </div>
+                </div>
+              )}
 
               {/* Card Content */}
               <div className="p-4 sm:p-5 text-center flex-grow flex flex-col justify-between">

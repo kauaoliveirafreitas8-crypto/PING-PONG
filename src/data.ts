@@ -199,36 +199,42 @@ export const bonusList: BonusItem[] = [
     title: "GUIA PRÁTICO DE SAQUE & 3ª BOLA",
     desc: "Combinações estruturadas de saque curto, médio e longo com esquemas de ataque imediato para definir o ponto na 3ª bola.",
     originalPrice: "R$ 39,00",
+    image: "https://i.ibb.co/7Jz4y2dx/bonus-01.webp",
   },
   {
     n: 2,
     title: "GUIA DE AULAS PRONTAS",
     desc: "Modelos de sessões completas combinando diferentes fichas.",
     originalPrice: "R$ 37,00",
+    image: "https://i.ibb.co/h18jL57w/bonus-02.webp",
   },
   {
     n: 3,
     title: "GUIA TÁTICO CONTRA PINOS & DEFESA",
     desc: "Estratégias e padrões de treino específicos para preparar seus alunos contra adversários com borracha de pino ou defensores.",
     originalPrice: "R$ 37,00",
+    image: "https://i.ibb.co/0RPkyC15/bonus-03.webp",
   },
   {
     n: 4,
     title: "ROTINAS DE AQUECIMENTO ESPECÍFICO & FOOTWORK",
     desc: "Protocolos rápidos de 10 a 15 minutos com bola para ativar coordenação motora, agilidade de pernas e prontidão.",
     originalPrice: "R$ 29,00",
+    image: "https://i.ibb.co/RGZJYhMj/bonus-04.webp",
   },
   {
     n: 5,
     title: "MODELOS DE TORNEIOS RÁPIDOS & RODÍZIOS",
     desc: "Formatos dinâmicos de disputas internas para fechar as aulas simulando a pressão e tomada de decisão de jogos reais.",
     originalPrice: "R$ 29,00",
+    image: "https://i.ibb.co/G3VWq9Wk/bonus-05.webp",
   },
   {
     n: 6,
     title: "CHECKLIST DE AVALIAÇÃO TÉCNICO-TÁTICA",
     desc: "Ficha de diagnóstico visual para identificar e corrigir falhas no forehand, backhand, transição e posicionamento.",
     originalPrice: "R$ 29,00",
+    image: "https://i.ibb.co/qYTn5Ztr/bonus-06.webp",
   },
 ];
 

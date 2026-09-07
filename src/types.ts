@@ -25,6 +25,7 @@ export interface BonusItem {
   title: string;
   desc: string;
   originalPrice: string;
+  image?: string;
 }
 
 export interface FaqItem {
