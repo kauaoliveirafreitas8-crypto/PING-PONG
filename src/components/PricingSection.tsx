@@ -143,33 +143,27 @@ export const PricingSection: React.FC = () => {
   };
 
   return (
-    <section id="planos" className="relative bg-white py-12 lg:py-16 px-4 sm:px-6">
+    <section id="planos" className="relative bg-white py-10 sm:py-12 lg:py-16 px-3.5 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center font-black text-2xl sm:text-3xl md:text-4xl text-[#0A192F] tracking-tight uppercase">
+        <h2 className="text-center font-black text-xl sm:text-3xl md:text-4xl text-[#0A192F] tracking-tight uppercase">
           ESCOLHA SEU PLANO E{" "}
           <span className="text-[#0066CC]">COMECE AGORA</span>
         </h2>
 
-        <p className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-slate-700 font-bold text-xs sm:text-sm uppercase">
-          <Clock className="w-4 h-4 text-[#0066CC]" />
-          <span>⏰ OFERTA ESPECIAL DISPONÍVEL HOJE:</span>
-          <strong className="text-[#0066CC]">{todayFormatted}</strong>
-        </p>
-
-        <div className="mt-6 rounded-2xl bg-gradient-to-r from-[#0066CC] to-[#0284C7] text-white font-black text-center py-3 px-5 shadow-md uppercase tracking-wide text-xs sm:text-sm">
+        <div className="mt-5 sm:mt-6 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#0066CC] to-[#0284C7] text-white font-black text-center py-2.5 px-3.5 sm:py-3 sm:px-5 shadow-xs uppercase tracking-wide text-[11px] sm:text-sm leading-snug">
           ⏰ 🔥 OFERTA ESPECIAL COM VALOR PROMOCIONAL POR TEMPO LIMITADO!
         </div>
 
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8 items-stretch">
           {/* Basic Plan Card */}
-          <div className="rounded-3xl bg-white border-2 border-slate-200 p-6 md:p-10 shadow-md text-center hover:border-slate-300 transition-all flex flex-col justify-between">
+          <div className="rounded-2xl sm:rounded-3xl bg-white border-2 border-slate-200 p-4 sm:p-6 md:p-10 shadow-xs text-center hover:border-slate-300 transition-all flex flex-col justify-between">
             <div>
-              <h3 className="font-black text-2xl md:text-3xl text-[#0A192F] uppercase">
+              <h3 className="font-black text-xl sm:text-2xl md:text-3xl text-[#0A192F] uppercase">
                 PLANO BÁSICO
               </h3>
 
-              <div className="mt-6 flex justify-center">
-                <div className="w-full max-w-[240px] rounded-xl overflow-hidden shadow border border-slate-100">
+              <div className="mt-4 sm:mt-6 flex justify-center">
+                <div className="w-full max-w-[220px] sm:max-w-[240px] rounded-xl overflow-hidden shadow-xs border border-slate-100">
                   <img
                     loading="lazy"
                     decoding="async"
@@ -182,26 +176,26 @@ export const PricingSection: React.FC = () => {
                 </div>
               </div>
 
-              <ul className="mt-6 space-y-2.5 text-left max-w-sm mx-auto">
+              <ul className="mt-5 sm:mt-6 space-y-2 sm:space-y-2.5 text-left max-w-sm mx-auto">
                 {basicPlanFeatures.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-slate-700">
-                    <Check className="w-5 h-5 text-[#16A34A] flex-shrink-0 mt-0.5" strokeWidth={2.8} />
-                    <span className="text-sm font-semibold">{item}</span>
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#16A34A] flex-shrink-0 mt-0.5" strokeWidth={2.8} />
+                    <span className="text-xs sm:text-sm font-semibold">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-100">
-              <p className="text-slate-400 line-through text-sm uppercase font-semibold">
+            <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100">
+              <p className="text-slate-400 line-through text-xs sm:text-sm uppercase font-semibold">
                 DE R$ 47,90 POR:
               </p>
               <div className="mt-1 leading-none">
-                <span className="text-5xl md:text-6xl font-black text-[#0066CC] tracking-tight">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0066CC] tracking-tight">
                   R$ 27,90
                 </span>
               </div>
-              <p className="mt-2 text-xs text-slate-600 font-bold uppercase">
+              <p className="mt-2 text-[11px] sm:text-xs text-slate-600 font-bold uppercase">
                 PAGAMENTO ÚNICO • ACESSO IMEDIATO
               </p>
 
@@ -217,7 +211,7 @@ export const PricingSection: React.FC = () => {
                 onClick={() => handleCheckoutClick("Plano Básico", 27.9)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide shadow-[0_6px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer"
+                className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-xs sm:text-base shadow-[0_5px_0_0_#004F9F] sm:shadow-[0_6px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[2px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer"
               >
                 QUERO O PLANO BÁSICO →
               </a>
@@ -227,27 +221,27 @@ export const PricingSection: React.FC = () => {
           {/* Complete Plan Card */}
           <div
             id="plano-completo"
-            className="relative rounded-3xl bg-white border-[3px] border-[#0066CC] p-6 md:p-10 shadow-2xl text-center lg:scale-[1.02] ring-4 ring-[#0066CC]/10 flex flex-col justify-between scroll-mt-8"
+            className="relative rounded-2xl sm:rounded-3xl bg-white border-[3px] border-[#0066CC] p-4 sm:p-6 md:p-10 shadow-xl text-center lg:scale-[1.02] ring-4 ring-[#0066CC]/10 flex flex-col justify-between scroll-mt-8"
           >
             <div>
               <div
                 id="mais-completo"
-                className="-mx-6 md:-mx-10 -mt-6 md:-mt-10 rounded-t-[20px] bg-[#0066CC] text-white text-center py-3.5 px-4 font-black uppercase tracking-wide text-sm md:text-base shadow-md scroll-mt-6 sm:scroll-mt-8"
+                className="-mx-4 sm:-mx-6 md:-mx-10 -mt-4 sm:-mt-6 md:-mt-10 rounded-t-[13px] sm:rounded-t-[20px] bg-[#0066CC] text-white text-center py-3 sm:py-3.5 px-4 font-black uppercase tracking-wide text-xs sm:text-base shadow-sm scroll-mt-6 sm:scroll-mt-8"
               >
                 ⭐ MAIS VENDIDO
               </div>
 
-              <div className="mt-6">
-                <h3 className="font-black text-xl sm:text-2xl md:text-3xl text-[#0A192F] uppercase tracking-tight whitespace-nowrap">
+              <div className="mt-5 sm:mt-6">
+                <h3 className="font-black text-xl sm:text-2xl md:text-3xl text-[#0A192F] uppercase tracking-tight whitespace-normal sm:whitespace-nowrap">
                   PLANO COMPLETO <span className="text-[#0066CC]">+BÔNUS</span>
                 </h3>
-                <p className="mt-1 text-[#0066CC] font-bold text-sm uppercase">
+                <p className="mt-1 text-[#0066CC] font-bold text-xs sm:text-sm uppercase">
                   +100 FICHAS VISUAIS DE AULAS PRONTAS
                 </p>
               </div>
 
-              <div className="mt-6 flex justify-center">
-                <div className="w-full max-w-[280px] rounded-xl overflow-hidden shadow-md border border-slate-200">
+              <div className="mt-4 sm:mt-6 flex justify-center">
+                <div className="w-full max-w-[240px] sm:max-w-[280px] rounded-xl overflow-hidden shadow-xs border border-slate-200">
                   <img
                     loading="lazy"
                     decoding="async"
@@ -260,16 +254,16 @@ export const PricingSection: React.FC = () => {
                 </div>
               </div>
 
-              <ul className="mt-6 space-y-2.5 text-left max-w-sm mx-auto">
+              <ul className="mt-5 sm:mt-6 space-y-2 sm:space-y-2.5 text-left max-w-sm mx-auto">
                 {completePlanFeatures.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-slate-800">
                     {item.isBonus ? (
-                      <Gift className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      <Gift className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500 flex-shrink-0 mt-0.5" />
                     ) : (
-                      <Check className="w-5 h-5 text-[#16A34A] flex-shrink-0 mt-0.5" strokeWidth={2.8} />
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#16A34A] flex-shrink-0 mt-0.5" strokeWidth={2.8} />
                     )}
                     <span
-                      className={`text-sm ${
+                      className={`text-xs sm:text-sm ${
                         item.isBonus ? "font-bold text-[#0A192F]" : "font-medium"
                       }`}
                     >
@@ -280,17 +274,17 @@ export const PricingSection: React.FC = () => {
               </ul>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-100">
-              <p className="text-rose-500 line-through text-base font-bold uppercase">
-                DE R$ 97,00 POR APENAS:
+            <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-100">
+              <p className="text-rose-500 line-through text-xs sm:text-base font-bold uppercase">
+                DE R$ 147,00 POR APENAS:
               </p>
               <div className="mt-1 leading-none">
-                <span className="text-6xl md:text-7xl font-black text-[#0066CC] tracking-tight">
+                <span className="text-5xl sm:text-6xl md:text-7xl font-black text-[#0066CC] tracking-tight">
                   R$ 47,90
                 </span>
               </div>
 
-              <p className="mt-3 font-bold text-[#0A192F] text-base sm:text-lg uppercase">
+              <p className="mt-2.5 sm:mt-3 font-bold text-[#0A192F] text-xs sm:text-lg uppercase">
                 OU PARCELADO NO CARTÃO DE CRÉDITO
               </p>
 
@@ -306,7 +300,7 @@ export const PricingSection: React.FC = () => {
                 onClick={() => handleCheckoutClick("Plano Completo", 47.9)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide shadow-[0_6px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer animate-cta-pulse"
+                className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-xs sm:text-base shadow-[0_5px_0_0_#004F9F] sm:shadow-[0_6px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[2px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer animate-cta-pulse"
               >
                 QUERO O PLANO COMPLETO →
               </a>

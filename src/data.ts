@@ -2,9 +2,8 @@ import {
   Target,
   Eye,
   RotateCcw,
-  ClipboardList,
+  LayoutList,
   TrendingUp,
-  Activity,
   Ruler,
   Hash,
   ArrowDownCircle,
@@ -23,9 +22,9 @@ import {
 
 export const assets = {
   gmailIcon: "/assets/gmail-WKqhIC7A.webp",
-  heroMockup: "/src/assets/images/mockup_fichas_tm_1788631436339.jpg",
-  sectionMockup: "/src/assets/images/kit_completo_tm_1788631449869.jpg",
-  sampleFicha: "/src/assets/images/ficha_treino_sample_1788631465699.jpg",
+  heroMockup: "/assets/mockup_fichas.webp",
+  sectionMockup: "/assets/kit_completo.webp",
+  sampleFicha: "/assets/ficha-carrossel-card.webp",
   guaranteeBadge: "/assets/garantia-opt.webp",
 };
 
@@ -88,59 +87,59 @@ export const drillExamples: DrillExample[] = [
 export const benefitsList: BenefitItem[] = [
   {
     icon: Target,
-    title: "🎯 CHEGAR AO TREINO SABENDO O QUE APLICAR",
+    emoji: "🎯",
+    title: "CHEGAR AO TREINO SABENDO O QUE APLICAR",
     desc: "Tenha atividades prontas para consultar quando precisar organizar a sessão, sem precisar criar um exercício novo do zero.",
   },
   {
     icon: Eye,
-    title: "👁️ VISUALIZAR RAPIDAMENTE A ATIVIDADE",
+    emoji: "👀",
+    title: "VISUALIZAR RAPIDAMENTE A ATIVIDADE",
     desc: "Veja posições, trajetórias, zonas-alvo e sequência do exercício através de diagramas visuais.",
   },
   {
     icon: RotateCcw,
-    title: "🔄 VARIAR SEUS TREINAMENTOS",
+    emoji: "🔄",
+    title: "VARIAR SEUS TREINAMENTOS",
     desc: "Tenha diferentes propostas para trabalhar aspectos técnicos e técnico-táticos sem ficar repetindo sempre as mesmas atividades.",
   },
   {
-    icon: ClipboardList,
-    title: "📋 ORGANIZAR A AULA COM MAIS PRATICIDADE",
+    icon: LayoutList,
+    emoji: "⚡",
+    title: "ORGANIZAR A AULA COM MAIS PRATICIDADE",
     desc: "Consulte rapidamente como posicionar os jogadores, iniciar a atividade, realizar o rodízio e conduzir as repetições.",
   },
   {
     icon: TrendingUp,
-    title: "📈 FACILITAR OU AUMENTAR A DIFICULDADE",
+    emoji: "📈",
+    title: "FACILITAR OU AUMENTAR A DIFICULDADE",
     desc: "Utilize as regressões e progressões indicadas em cada ficha conforme a necessidade dos alunos.",
-  },
-  {
-    icon: Activity,
-    title: "🏓 LEVAR O TREINO PARA SITUAÇÕES DE JOGO",
-    desc: "Trabalhe combinações de golpes, tomada de decisão, construção do ponto e outras situações próximas da realidade da partida.",
   },
 ];
 
 export const whoIsItForCards = [
   {
-    icon: "🏓",
+    icon: "👨‍🏫",
     title: "PROFESSORES DE TÊNIS DE MESA",
     desc: "Para quem precisa de atividades prontas para utilizar durante suas aulas.",
   },
   {
-    icon: "🏓",
+    icon: "🎯",
     title: "TREINADORES",
     desc: "Para quem trabalha o desenvolvimento técnico e técnico-tático de seus atletas.",
   },
   {
-    icon: "🏓",
+    icon: "🏢",
     title: "PROFESSORES DE CLUBES E ACADEMIAS",
     desc: "Para quem precisa variar os treinamentos sem precisar elaborar cada atividade do zero.",
   },
   {
-    icon: "🏓",
+    icon: "🤝",
     title: "PROFESSORES DE PROJETOS ESPORTIVOS",
     desc: "Para quem trabalha com diferentes grupos de alunos e precisa de uma forma prática de organizar as sessões.",
   },
   {
-    icon: "🏓",
+    icon: "⚡",
     title: "QUEM TRABALHA COM ALUNOS INTERMEDIÁRIOS E AVANÇADOS",
     desc: "Para quem já passou da fase de iniciação e precisa trabalhar saque, recepção, ataque, deslocamento, combinações e situações de jogo.",
   },
@@ -193,12 +192,12 @@ export const bonusList: BonusItem[] = [
     n: 1,
     title: "GUIA PRÁTICO DE SAQUE & 3ª BOLA",
     desc: "Combinações estruturadas de saque curto, médio e longo com esquemas de ataque imediato para definir o ponto na 3ª bola.",
-    originalPrice: "R$ 47,00",
+    originalPrice: "R$ 39,00",
   },
   {
     n: 2,
-    title: "PLANILHA DE CONTROLE & FREQUÊNCIA DE TREINOS",
-    desc: "Ferramenta pronta para acompanhar a evolução técnica, metas atingidas e frequência de cada aluno em mesa.",
+    title: "GUIA DE AULAS PRONTAS",
+    desc: "Modelos de sessões completas combinando diferentes fichas.",
     originalPrice: "R$ 37,00",
   },
   {
@@ -223,9 +222,11 @@ export const bonusList: BonusItem[] = [
     n: 6,
     title: "CHECKLIST DE AVALIAÇÃO TÉCNICO-TÁTICA",
     desc: "Ficha de diagnóstico visual para identificar e corrigir falhas no forehand, backhand, transição e posicionamento.",
-    originalPrice: "R$ 37,00",
+    originalPrice: "R$ 29,00",
   },
 ];
+
+export const totalBonusValue = "R$ 200,00";
 
 export const faqList: FaqItem[] = [
   {
@@ -287,7 +288,7 @@ export const completePlanFeatures: PlanFeature[] = [
   { text: "Progressões, regressões e rodízios de alunos", isBonus: false },
   { text: "Acesso imediato no celular, tablet e PC", isBonus: false },
   { text: "BÔNUS 1: Guia Prático de Saque & 3ª Bola", isBonus: true },
-  { text: "BÔNUS 2: Planilha de Frequência & Evolução", isBonus: true },
+  { text: "BÔNUS 2: Guia de Aulas Prontas", isBonus: true },
   { text: "BÔNUS 3: Guia Tático contra Pinos & Defesa", isBonus: true },
   { text: "BÔNUS 4: Aquecimento Específico & Footwork", isBonus: true },
   { text: "BÔNUS 5: Modelos de Torneios & Disputas Rápidas", isBonus: true },

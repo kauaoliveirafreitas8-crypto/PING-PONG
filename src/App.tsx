@@ -11,7 +11,6 @@ import { TargetAudienceSection } from "./components/TargetAudienceSection";
 import { WhoIsItForSection } from "./components/WhoIsItForSection";
 import { ContentSection } from "./components/ContentSection";
 import { BonusesSection } from "./components/BonusesSection";
-import { WhyChooseSection } from "./components/WhyChooseSection";
 import { PricingSection } from "./components/PricingSection";
 import { HowToReceiveSection } from "./components/HowToReceiveSection";
 import { GuaranteeSection } from "./components/GuaranteeSection";
@@ -37,14 +36,13 @@ export default function App() {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white w-full overflow-x-hidden">
       <AnnouncementBar />
       <HeroSection onCtaClick={scrollToCompletePlan} />
       <MarqueeSection />
       <WhoIsItForSection onCtaClick={scrollToCompletePlan} />
       <TargetAudienceSection />
       <ContentSection />
-      <WhyChooseSection />
       <BonusesSection />
       <PricingSection />
       <div className="content-auto">

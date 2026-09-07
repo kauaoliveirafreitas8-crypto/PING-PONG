@@ -9,6 +9,7 @@ export interface DrillExample {
 
 export interface BenefitItem {
   icon: LucideIcon;
+  emoji?: string;
   title: string;
   desc: string;
 }
