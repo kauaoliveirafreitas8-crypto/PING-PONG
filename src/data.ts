@@ -22,8 +22,14 @@ import {
 
 export const assets = {
   gmailIcon: "/assets/gmail-WKqhIC7A.webp",
-  heroMockup: "/assets/mockup_fichas.webp",
-  sectionMockup: "/assets/kit_completo.webp",
+  heroMockup: "/assets/BASICO.png",
+  heroMockupFallback: "https://i.ibb.co/Z117hWq8/BASICO.png",
+  sectionMockup: "/assets/BASICO.png",
+  sectionMockupFallback: "https://i.ibb.co/Z117hWq8/BASICO.png",
+  basicPlanMockup: "/assets/BASICO.png",
+  basicPlanMockupFallback: "https://i.ibb.co/Z117hWq8/BASICO.png",
+  completePlanMockup: "/assets/COMPLETO-V2.png",
+  completePlanMockupFallback: "https://i.ibb.co/TMFTW82L/COMPLETO.png",
   sampleFicha: "/assets/ficha-carrossel-card.webp",
   guaranteeBadge: "/assets/garantia-opt.webp",
 };

@@ -163,15 +163,30 @@ export const PricingSection: React.FC = () => {
               </h3>
 
               <div className="mt-4 sm:mt-6 flex justify-center">
-                <div className="w-full max-w-[220px] sm:max-w-[240px] rounded-xl overflow-hidden shadow-xs border border-slate-100">
+                <div className="relative w-full max-w-[220px] sm:max-w-[240px] flex items-center justify-center">
+                  {/* Brilho sutil azul meio escuro quase sumindo ao redor do mockup */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-[#002B5C]/12 blur-xl pointer-events-none"
+                  />
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={assets.heroMockup}
+                    src={assets.basicPlanMockup}
                     alt="Plano Básico - +100 Fichas Visuais"
                     width={400}
                     height={400}
-                    className="w-full h-auto object-cover"
+                    className="relative z-10 w-full h-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
+                    style={{
+                      filter:
+                        "drop-shadow(0 10px 20px rgba(0, 37, 82, 0.22)) drop-shadow(0 0 16px rgba(0, 43, 92, 0.14))",
+                    }}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src !== assets.basicPlanMockupFallback) {
+                        target.src = assets.basicPlanMockupFallback;
+                      }
+                    }}
                   />
                 </div>
               </div>
@@ -241,15 +256,40 @@ export const PricingSection: React.FC = () => {
               </div>
 
               <div className="mt-4 sm:mt-6 flex justify-center">
-                <div className="w-full max-w-[240px] sm:max-w-[280px] rounded-xl overflow-hidden shadow-xs border border-slate-200">
+                <div className="relative w-full max-w-[250px] sm:max-w-[290px] flex items-center justify-center">
+                  {/* Destaque / Brilho Diferenciado multicamadas */}
+                  {/* Camada 1: Aura respiratória azul royal e ciano vibrante */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 m-auto w-[95%] h-[95%] rounded-full animate-aura-breathe blur-2xl pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(circle, rgba(0, 102, 204, 0.42) 0%, rgba(56, 189, 248, 0.3) 38%, rgba(0, 43, 92, 0.16) 65%, transparent 78%)",
+                    }}
+                  />
+                  {/* Camada 2: Toque sutil de brilho dourado dos bônus */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute -top-2 -right-2 w-28 h-28 rounded-full bg-amber-400/20 blur-xl pointer-events-none"
+                  />
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={assets.sectionMockup}
+                    src={assets.completePlanMockup}
                     alt="Plano Completo + Bônus"
                     width={400}
                     height={400}
-                    className="w-full h-auto object-cover"
+                    className="relative z-10 w-full h-auto object-contain transition-transform duration-300 hover:scale-[1.03]"
+                    style={{
+                      filter:
+                        "drop-shadow(0 16px 32px rgba(0, 35, 80, 0.38)) drop-shadow(0 0 26px rgba(0, 102, 204, 0.52)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.45))",
+                    }}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src !== assets.completePlanMockupFallback) {
+                        target.src = assets.completePlanMockupFallback;
+                      }
+                    }}
                   />
                 </div>
               </div>

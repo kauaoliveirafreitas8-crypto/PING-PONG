@@ -22,15 +22,12 @@ export const ContentSection: React.FC = () => {
 
           {/* Large Mockup */}
           <div className="relative my-5 sm:my-8 flex flex-col items-center justify-center">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(50% 45% at 50% 50%, rgba(0, 102, 204, 0.15), transparent 70%)",
-              }}
-            />
-            <div className="relative w-full max-w-2xl rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+            <div className="relative w-full max-w-xl flex items-center justify-center">
+              {/* Brilho sutil azul meio escuro quase sumindo ao redor do mockup */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-[#002B5C]/15 blur-2xl pointer-events-none"
+              />
               <img
                 loading="lazy"
                 decoding="async"
@@ -38,7 +35,17 @@ export const ContentSection: React.FC = () => {
                 alt="Kit Completo +100 Fichas Visuais de Aulas Prontas para Tênis de Mesa"
                 width={800}
                 height={600}
-                className="w-full h-auto object-cover"
+                className="relative z-10 w-full h-auto object-contain transition-transform duration-300 hover:scale-[1.01]"
+                style={{
+                  filter:
+                    "drop-shadow(0 14px 28px rgba(0, 37, 82, 0.28)) drop-shadow(0 0 22px rgba(0, 43, 92, 0.18))",
+                }}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== assets.sectionMockupFallback) {
+                    target.src = assets.sectionMockupFallback;
+                  }
+                }}
               />
             </div>
 

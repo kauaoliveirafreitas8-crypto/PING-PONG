@@ -77,18 +77,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick }) => {
 
           {/* Right Column: Hero Mockup */}
           <div className="relative w-full order-1 lg:order-2 flex items-center justify-center my-1 sm:my-4 lg:my-0">
-            <div className="relative w-full max-w-[320px] sm:max-w-[440px] md:max-w-[480px] lg:max-w-none flex items-center justify-center">
-              <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,102,204,0.15)] border border-slate-200 bg-white">
-                <img
-                  src={assets.heroMockup}
-                  alt="Mockup das +100 Fichas Visuais de Aulas Prontas para Tênis de Mesa"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-cover"
-                  loading="eager"
-                  decoding="async"
-                />
-              </div>
+            <div className="relative w-full max-w-[320px] sm:max-w-[440px] md:max-w-[480px] lg:max-w-[540px] flex items-center justify-center">
+              {/* Brilho sutil azul meio escuro quase sumindo ao redor do mockup */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-[#002B5C]/15 blur-2xl pointer-events-none"
+              />
+              <img
+                src={assets.heroMockup}
+                alt="Mockup das +100 Fichas Visuais de Aulas Prontas para Tênis de Mesa"
+                width={600}
+                height={600}
+                className="relative z-10 w-full h-auto object-contain transition-transform duration-300 hover:scale-[1.01]"
+                style={{
+                  filter:
+                    "drop-shadow(0 14px 28px rgba(0, 37, 82, 0.28)) drop-shadow(0 0 22px rgba(0, 43, 92, 0.18))",
+                }}
+                loading="eager"
+                decoding="async"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== assets.heroMockupFallback) {
+                    target.src = assets.heroMockupFallback;
+                  }
+                }}
+              />
             </div>
           </div>
         </div>
