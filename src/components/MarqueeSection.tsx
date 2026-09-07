@@ -86,7 +86,7 @@ export const MarqueeSection: React.FC = () => {
             POR DENTRO
           </span>
         </h2>
-        <p className="mt-2 text-slate-600 text-xs sm:text-base font-medium max-w-2xl mx-auto">
+        <p className="mt-2 text-slate-600 text-sm sm:text-base font-medium max-w-2xl mx-auto">
           Segure com o toque para pausar e analisar os detalhes das fichas de aula.
         </p>
       </div>
@@ -98,14 +98,14 @@ export const MarqueeSection: React.FC = () => {
         onTouchEnd={() => setIsTouched(false)}
       >
         <div
-          className={`flex w-max gap-3.5 sm:gap-6 animate-marquee py-3 select-none ${
+          className={`flex w-max gap-4 sm:gap-6 animate-marquee py-3 select-none ${
             isTouched ? "pause-marquee" : ""
           }`}
         >
           {carouselItems.concat(carouselItems).map((item, index) => (
             <div
               key={`${item.id}-${index}`}
-              className="relative shrink-0 w-[200px] sm:w-[260px] md:w-[310px] transition-all duration-300 hover:-translate-y-1 group"
+              className="relative shrink-0 w-[260px] sm:w-[290px] md:w-[330px] transition-all duration-300 hover:-translate-y-1 group"
             >
               <img
                 src={item.src}

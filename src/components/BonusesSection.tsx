@@ -45,10 +45,10 @@ export const BonusesSection: React.FC = () => {
               {/* Card Content */}
               <div className="p-4 sm:p-5 text-center flex-grow flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[#0A192F] font-black text-xs sm:text-base leading-snug uppercase">
+                  <h3 className="text-[#0A192F] font-black text-sm sm:text-base leading-snug uppercase">
                     {bonus.title}
                   </h3>
-                  <p className="mt-1.5 sm:mt-2 text-slate-600 font-normal text-xs sm:text-sm leading-relaxed">
+                  <p className="mt-1.5 sm:mt-2 text-slate-600 font-normal text-[13.5px] sm:text-sm leading-relaxed">
                     {bonus.desc}
                   </p>
                 </div>
@@ -59,7 +59,7 @@ export const BonusesSection: React.FC = () => {
                     {bonus.originalPrice}
                   </span>
                   <span className="text-slate-400 font-bold">→</span>
-                  <span className="bg-[#16A34A] text-white font-black px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs tracking-wider uppercase shadow-xs">
+                  <span className="bg-[#16A34A] text-white font-black px-3 py-1 rounded-full text-xs sm:text-sm tracking-wider uppercase shadow-xs">
                     GRÁTIS
                   </span>
                 </div>
@@ -76,7 +76,7 @@ export const BonusesSection: React.FC = () => {
             <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-emerald-500/15 rounded-full blur-xl pointer-events-none" />
 
             <div className="text-left relative z-10">
-              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-300 block leading-tight">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 block leading-tight">
                 VALOR DOS 6 BÔNUS SOMADOS:
               </span>
               <span className="text-xl sm:text-3xl font-black text-rose-400 line-through tracking-tight">

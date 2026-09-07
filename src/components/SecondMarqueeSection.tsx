@@ -81,7 +81,7 @@ export const SecondMarqueeSection: React.FC = () => {
       className="relative bg-white pb-10 sm:pb-14 lg:pb-16 pt-2 sm:pt-4 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-4 sm:mb-6">
-        <p className="text-slate-500 text-xs sm:text-sm font-medium">
+        <p className="text-slate-500 text-sm sm:text-base font-medium">
           Segure com o toque para pausar e analisar os detalhes das fichas de aula.
         </p>
       </div>
@@ -93,14 +93,14 @@ export const SecondMarqueeSection: React.FC = () => {
         onTouchEnd={() => setIsTouched(false)}
       >
         <div
-          className={`flex w-max gap-3.5 sm:gap-6 animate-marquee py-3 select-none ${
+          className={`flex w-max gap-4 sm:gap-6 animate-marquee py-3 select-none ${
             isTouched ? "pause-marquee" : ""
           }`}
         >
           {carouselItems.concat(carouselItems).map((item, index) => (
             <div
               key={`${item.id}-${index}`}
-              className="relative shrink-0 w-[200px] sm:w-[260px] md:w-[310px] transition-all duration-300 hover:-translate-y-1 group"
+              className="relative shrink-0 w-[260px] sm:w-[290px] md:w-[330px] transition-all duration-300 hover:-translate-y-1 group"
             >
               <img
                 src={item.src}

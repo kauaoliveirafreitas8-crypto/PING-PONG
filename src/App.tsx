@@ -41,15 +41,13 @@ export default function App() {
       <AnnouncementBar />
       <HeroSection onCtaClick={scrollToCompletePlan} />
       <MarqueeSection />
+      <HowToReceiveSection />
       <WhoIsItForSection onCtaClick={scrollToCompletePlan} />
       <TargetAudienceSection />
       <SecondMarqueeSection />
       <ContentSection />
       <BonusesSection />
       <PricingSection />
-      <div className="content-auto">
-        <HowToReceiveSection />
-      </div>
       <div className="content-auto">
         <GuaranteeSection />
       </div>

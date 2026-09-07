@@ -9,10 +9,10 @@ export const TargetAudienceSection: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[#0066CC]/10 text-[#0066CC] font-black text-[11px] sm:text-xs uppercase tracking-wider mb-2">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#0066CC]/10 text-[#0066CC] font-black text-xs sm:text-sm uppercase tracking-wider mb-2">
             APLICAÇÃO PRÁTICA NO DIA A DIA
           </span>
-          <h2 className="font-black tracking-tight text-xl sm:text-3xl lg:text-4xl text-[#0A192F] uppercase">
+          <h2 className="font-black tracking-tight text-2xl sm:text-3xl lg:text-4xl text-[#0A192F] uppercase">
             <span className="block">IDEAL PARA VOCÊ</span>
             <span className="block text-[#0066CC]">QUE DESEJA:</span>
           </h2>
@@ -30,7 +30,7 @@ export const TargetAudienceSection: React.FC = () => {
               <h3 className="mt-3 sm:mt-4 text-[#0A192F] font-black text-sm sm:text-base leading-snug">
                 {title}
               </h3>
-              <p className="mt-1.5 sm:mt-2 text-slate-600 font-normal text-xs sm:text-sm leading-relaxed">
+              <p className="mt-1.5 sm:mt-2 text-slate-600 font-normal text-[13.5px] sm:text-sm leading-relaxed">
                 {desc}
               </p>
             </div>

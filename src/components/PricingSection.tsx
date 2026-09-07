@@ -195,7 +195,7 @@ export const PricingSection: React.FC = () => {
                 {basicPlanFeatures.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-slate-700">
                     <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#16A34A] flex-shrink-0 mt-0.5" strokeWidth={2.8} />
-                    <span className="text-xs sm:text-sm font-semibold">{item}</span>
+                    <span className="text-[13.5px] sm:text-sm font-semibold">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -210,7 +210,7 @@ export const PricingSection: React.FC = () => {
                   R$ 27,90
                 </span>
               </div>
-              <p className="mt-2 text-[11px] sm:text-xs text-slate-600 font-bold uppercase">
+              <p className="mt-2 text-xs sm:text-sm text-slate-600 font-bold uppercase">
                 PAGAMENTO ÚNICO • ACESSO IMEDIATO
               </p>
 
@@ -226,7 +226,7 @@ export const PricingSection: React.FC = () => {
                 onClick={() => handleCheckoutClick("Plano Básico", 27.9)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-xs sm:text-base shadow-[0_5px_0_0_#004F9F] sm:shadow-[0_6px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[2px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer"
+                className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-4.5 sm:py-5 min-h-[58px] rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] sm:shadow-[0_7px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[3px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer"
               >
                 QUERO O PLANO BÁSICO →
               </a>
@@ -241,7 +241,7 @@ export const PricingSection: React.FC = () => {
             <div>
               <div
                 id="mais-completo"
-                className="-mx-4 sm:-mx-6 md:-mx-10 -mt-4 sm:-mt-6 md:-mt-10 rounded-t-[13px] sm:rounded-t-[20px] bg-[#0066CC] text-white text-center py-3 sm:py-3.5 px-4 font-black uppercase tracking-wide text-xs sm:text-base shadow-sm scroll-mt-6 sm:scroll-mt-8"
+                className="-mx-4 sm:-mx-6 md:-mx-10 -mt-4 sm:-mt-6 md:-mt-10 rounded-t-[13px] sm:rounded-t-[20px] bg-[#0066CC] text-white text-center py-3 sm:py-3.5 px-4 font-black uppercase tracking-wide text-sm sm:text-base shadow-sm scroll-mt-6 sm:scroll-mt-8"
               >
                 ⭐ MAIS VENDIDO
               </div>
@@ -303,7 +303,7 @@ export const PricingSection: React.FC = () => {
                       <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#16A34A] flex-shrink-0 mt-0.5" strokeWidth={2.8} />
                     )}
                     <span
-                      className={`text-xs sm:text-sm ${
+                      className={`text-[13.5px] sm:text-sm ${
                         item.isBonus ? "font-bold text-[#0A192F]" : "font-medium"
                       }`}
                     >
@@ -340,7 +340,7 @@ export const PricingSection: React.FC = () => {
                 onClick={() => handleCheckoutClick("Plano Completo", 47.9)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-xs sm:text-base shadow-[0_5px_0_0_#004F9F] sm:shadow-[0_6px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[2px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer animate-cta-pulse"
+                className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-4.5 sm:py-5 min-h-[58px] rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] sm:shadow-[0_7px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[3px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer animate-cta-pulse"
               >
                 QUERO O PLANO COMPLETO →
               </a>
