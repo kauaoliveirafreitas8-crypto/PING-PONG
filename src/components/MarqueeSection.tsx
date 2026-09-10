@@ -77,17 +77,18 @@ export const MarqueeSection: React.FC = () => {
   return (
     <section
       id="marquee-section"
-      className="relative bg-[#F8FAFC] py-8 sm:py-12 lg:py-14 overflow-hidden border-t border-b border-slate-200"
+      className="relative bg-[#F8FAFC] py-8 sm:py-12 lg:py-14 overflow-hidden border-b border-slate-200/80"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066CC] border border-blue-200/80 font-bold text-xs uppercase tracking-wider mb-2.5 shadow-xs">
+          Amostra das Aulas Prontas
+        </span>
         <h2 className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 gap-y-1.5 text-[#0A192F] font-black tracking-tight text-xl sm:text-3xl lg:text-4xl uppercase">
-          <span>🏓 VEJA AS FICHAS DE TREINOS</span>
-          <span className="bg-[#0066CC] text-white px-3 py-0.5 rounded-lg whitespace-nowrap shadow-xs text-lg sm:text-2xl lg:text-3xl">
-            POR DENTRO
-          </span>
+          <span>VEJA AS FICHAS DE TREINOS</span>
+          <span className="text-[#0066CC]">POR DENTRO</span>
         </h2>
-        <p className="mt-2 text-slate-600 text-sm sm:text-base font-medium max-w-2xl mx-auto">
-          Segure com o toque para pausar e analisar os detalhes das fichas de aula.
+        <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal max-w-2xl mx-auto">
+          Passe o mouse ou toque para pausar e analisar a organização visual de cada aula.
         </p>
       </div>
 
@@ -97,6 +98,10 @@ export const MarqueeSection: React.FC = () => {
         onTouchStart={() => setIsTouched(true)}
         onTouchEnd={() => setIsTouched(false)}
       >
+        {/* Soft edge blur masks for clean infinite scroll look */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-24 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+
         <div
           className={`flex w-max gap-4 sm:gap-6 animate-marquee py-3 select-none ${
             isTouched ? "pause-marquee" : ""

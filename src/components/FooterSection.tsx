@@ -6,7 +6,7 @@ export const FooterSection: React.FC = () => {
   return (
     <footer
       id="footer-section"
-      className="bg-[#06101E] py-8 px-4 sm:px-6 border-t border-slate-800 text-slate-400 text-xs sm:text-sm"
+      className="bg-[#0A192F] py-8 px-4 sm:px-6 border-t border-slate-800 text-slate-400 text-xs sm:text-sm"
     >
       <div className="max-w-4xl mx-auto flex flex-col items-center justify-center space-y-3 text-center">
         <p className="text-slate-400 text-xs sm:text-sm font-medium">

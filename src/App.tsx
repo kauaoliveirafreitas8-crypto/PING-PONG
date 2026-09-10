@@ -7,10 +7,7 @@ import React from "react";
 import { AnnouncementBar } from "./components/AnnouncementBar";
 import { HeroSection } from "./components/HeroSection";
 import { MarqueeSection } from "./components/MarqueeSection";
-import { TargetAudienceSection } from "./components/TargetAudienceSection";
-import { SecondMarqueeSection } from "./components/SecondMarqueeSection";
 import { WhoIsItForSection } from "./components/WhoIsItForSection";
-import { ContentSection } from "./components/ContentSection";
 import { BonusesSection } from "./components/BonusesSection";
 import { PricingSection } from "./components/PricingSection";
 import { HowToReceiveSection } from "./components/HowToReceiveSection";
@@ -37,17 +34,14 @@ export default function App() {
   };
 
   return (
-    <main className="min-h-screen bg-white w-full overflow-x-hidden">
+    <main className="min-h-screen bg-[#F8FAFC] w-full overflow-x-hidden">
       <AnnouncementBar />
       <HeroSection onCtaClick={scrollToCompletePlan} />
       <MarqueeSection />
-      <HowToReceiveSection />
       <WhoIsItForSection onCtaClick={scrollToCompletePlan} />
-      <TargetAudienceSection />
-      <SecondMarqueeSection />
-      <ContentSection />
       <BonusesSection />
       <PricingSection />
+      <HowToReceiveSection />
       <div className="content-auto">
         <GuaranteeSection />
       </div>

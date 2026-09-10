@@ -35,8 +35,8 @@ export const assets = {
 };
 
 export const checkoutLinks = {
-  basicPlan: "https://pay.kiwify.com.br/PfJbIyE",
-  completePlan: "https://pay.kiwify.com.br/ACB7a3k",
+  basicPlan: "https://pay.lowify.com.br/checkout?product_id=oWDAzN",
+  completePlan: "https://pay.lowify.com.br/checkout?product_id=FKKb9l",
 };
 
 export const drillExamples: DrillExample[] = [
@@ -204,7 +204,7 @@ export const bonusList: BonusItem[] = [
   {
     n: 2,
     title: "GUIA DE AULAS PRONTAS",
-    desc: "Modelos de sessões completas combinando diferentes fichas.",
+    desc: "Modelos de sessões completas combinando diferentes fichas para aplicar direto no treino.",
     originalPrice: "R$ 37,00",
     image: "https://i.ibb.co/h18jL57w/bonus-02.webp",
   },
@@ -215,30 +215,9 @@ export const bonusList: BonusItem[] = [
     originalPrice: "R$ 37,00",
     image: "https://i.ibb.co/0RPkyC15/bonus-03.webp",
   },
-  {
-    n: 4,
-    title: "ROTINAS DE AQUECIMENTO ESPECÍFICO & FOOTWORK",
-    desc: "Protocolos rápidos de 10 a 15 minutos com bola para ativar coordenação motora, agilidade de pernas e prontidão.",
-    originalPrice: "R$ 29,00",
-    image: "https://i.ibb.co/RGZJYhMj/bonus-04.webp",
-  },
-  {
-    n: 5,
-    title: "MODELOS DE TORNEIOS RÁPIDOS & RODÍZIOS",
-    desc: "Formatos dinâmicos de disputas internas para fechar as aulas simulando a pressão e tomada de decisão de jogos reais.",
-    originalPrice: "R$ 29,00",
-    image: "https://i.ibb.co/G3VWq9Wk/bonus-05.webp",
-  },
-  {
-    n: 6,
-    title: "CHECKLIST DE AVALIAÇÃO TÉCNICO-TÁTICA",
-    desc: "Ficha de diagnóstico visual para identificar e corrigir falhas no forehand, backhand, transição e posicionamento.",
-    originalPrice: "R$ 29,00",
-    image: "https://i.ibb.co/qYTn5Ztr/bonus-06.webp",
-  },
 ];
 
-export const totalBonusValue = "R$ 200,00";
+export const totalBonusValue = "R$ 113,00";
 
 export const faqList: FaqItem[] = [
   {
@@ -285,15 +264,14 @@ export const faqList: FaqItem[] = [
 
 export const basicPlanFeatures = [
   "+100 Fichas Visuais de Aulas Prontas",
-  "Diagramas das atividades com trajetórias e zonas",
-  "Sequências de execução passo a passo",
-  "Pontos de observação e correção técnica",
   "Acesso imediato",
-  "Acesso vitalício",
+  "PDF em alta qualidade",
 ];
 
 export const completePlanFeatures: PlanFeature[] = [
   { text: "+100 FICHAS VISUAIS DE AULAS PRONTAS", isBonus: false },
+  { text: "Acesso imediato", isBonus: false },
+  { text: "PDF em alta qualidade", isBonus: false },
   { text: "Diagramas visuais de todas as atividades", isBonus: false },
   { text: "Sequências de execução detalhadas", isBonus: false },
   { text: "Metas de treino e pontos de observação", isBonus: false },
@@ -302,7 +280,4 @@ export const completePlanFeatures: PlanFeature[] = [
   { text: "BÔNUS 01: Guia Prático de Saque & 3ª Bola", isBonus: true },
   { text: "BÔNUS 02: Guia de Aulas Prontas", isBonus: true },
   { text: "BÔNUS 03: Guia Tático contra Pinos & Defesa", isBonus: true },
-  { text: "BÔNUS 04: Aquecimento Específico & Footwork", isBonus: true },
-  { text: "BÔNUS 05: Modelos de Torneios & Disputas Rápidas", isBonus: true },
-  { text: "BÔNUS 06: Checklist de Avaliação Técnico-Tática", isBonus: true },
 ];
