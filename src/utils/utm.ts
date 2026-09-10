@@ -1,12 +1,12 @@
 /**
  * Utilitário de Rastreamento e Repasse de UTMs / Parâmetros para Checkout
- * Preserva parâmetros de campanha do Facebook Ads, Google Ads, TikTok e plataformas de afiliados (Kiwify).
+ * Preserva parâmetros reais de campanha do Facebook Ads, Google Ads, TikTok e plataformas de afiliados (Lowify, Kiwify, etc.).
  */
 
 const STORAGE_KEY = "tracked_utm_params";
 
 /**
- * Salva e recupera todos os parâmetros de busca da URL atual,
+ * Salva e recupera todos os parâmetros de busca reais da URL atual,
  * com fallback para sessionStorage para não perder o rastreamento em caso de recarregamento.
  */
 export function getTrackingParams(): URLSearchParams {
@@ -16,7 +16,19 @@ export function getTrackingParams(): URLSearchParams {
 
   const currentParams = new URLSearchParams(window.location.search);
 
-  // Se houver parâmetros na URL atual, salva no sessionStorage
+  // Limpa resquícios de UTMs de teste anteriores se existirem
+  if (currentParams.get("utm_campaign") === "teste_campanha" || currentParams.get("fbclid") === "fake123456789") {
+    try {
+      sessionStorage.removeItem(STORAGE_KEY);
+      const cleanUrl = window.location.pathname + (window.location.hash || "");
+      window.history.replaceState(null, "", cleanUrl);
+    } catch {
+      // Ignora erro
+    }
+    return new URLSearchParams();
+  }
+
+  // Se houver parâmetros reais na URL atual, salva no sessionStorage
   if (Array.from(currentParams.keys()).length > 0) {
     try {
       sessionStorage.setItem(STORAGE_KEY, currentParams.toString());
@@ -30,7 +42,12 @@ export function getTrackingParams(): URLSearchParams {
   try {
     const saved = sessionStorage.getItem(STORAGE_KEY);
     if (saved) {
-      return new URLSearchParams(saved);
+      const savedParams = new URLSearchParams(saved);
+      if (savedParams.get("utm_campaign") === "teste_campanha" || savedParams.get("fbclid") === "fake123456789") {
+        sessionStorage.removeItem(STORAGE_KEY);
+        return new URLSearchParams();
+      }
+      return savedParams;
     }
   } catch {
     // Ignora erro
@@ -40,7 +57,7 @@ export function getTrackingParams(): URLSearchParams {
 }
 
 /**
- * Anexa todos os parâmetros de rastreamento (UTMs, fbclid, src, sck, etc.) a uma URL de checkout.
+ * Anexa todos os parâmetros de rastreamento reais (UTMs, fbclid, etc.) a uma URL de checkout.
  */
 export function buildCheckoutUrl(baseUrl: string): string {
   if (!baseUrl) return "";
@@ -48,6 +65,10 @@ export function buildCheckoutUrl(baseUrl: string): string {
   try {
     const url = new URL(baseUrl, window.location.origin);
     const trackingParams = getTrackingParams();
+
+    if (Array.from(trackingParams.keys()).length === 0) {
+      return baseUrl;
+    }
 
     // Anexa todos os parâmetros capturados
     trackingParams.forEach((value, key) => {
@@ -57,7 +78,7 @@ export function buildCheckoutUrl(baseUrl: string): string {
       }
     });
 
-    // Se tiver utm_content ou utm_campaign mas não tiver src, preenche src para Kiwify
+    // Se tiver utm_content ou utm_campaign mas não tiver src, preenche src
     if (!url.searchParams.has("src")) {
       const srcVal =
         trackingParams.get("src") ||
@@ -68,7 +89,7 @@ export function buildCheckoutUrl(baseUrl: string): string {
       }
     }
 
-    // Se tiver utm_term ou utm_content mas não tiver sck, preenche sck para Kiwify
+    // Se tiver utm_term ou utm_content mas não tiver sck, preenche sck
     if (!url.searchParams.has("sck")) {
       const sckVal =
         trackingParams.get("sck") ||
@@ -91,24 +112,34 @@ export function buildCheckoutUrl(baseUrl: string): string {
 
 /**
  * Inicializador global que monitora e garante que qualquer link
- * de checkout (Kiwify, Hotmart, etc.) na página receba os parâmetros
- * tanto na renderização quanto no momento do clique.
+ * de checkout (Lowify, Kiwify, etc.) receba os parâmetros reais do visitante.
  */
 export function initAutoUtmForwarding() {
   if (typeof window === "undefined") return;
 
-  // Atualiza os links presentes no DOM
+  // Limpa do histórico qualquer URL que tenha ficado com as UTMs fake anteriores
+  try {
+    if (window.location.search.includes("teste_campanha") || window.location.search.includes("fake123456789")) {
+      sessionStorage.removeItem(STORAGE_KEY);
+      const cleanUrl = window.location.pathname + (window.location.hash || "");
+      window.history.replaceState(null, "", cleanUrl);
+    }
+  } catch {
+    // Ignora erro
+  }
+
+  // Atualiza os links presentes no DOM apenas se houver UTMs reais
   const updateCheckoutLinksInDom = () => {
     const trackingParams = getTrackingParams();
     if (Array.from(trackingParams.keys()).length === 0) return;
 
     const links = document.querySelectorAll<HTMLAnchorElement>(
-      'a[href*="pay.kiwify.com.br"], a[href*="kiwify.com.br"], a[href*="hotmart.com"], a[href*="eduzz.com"]'
+      'a[href*="pay.lowify.com.br"], a[href*="lowify.com.br"], a[href*="pay.kiwify.com.br"], a[href*="kiwify.com.br"], a[href*="hotmart.com"], a[href*="eduzz.com"]'
     );
 
     links.forEach((link) => {
       const currentHref = link.getAttribute("href");
-      if (currentHref) {
+      if (currentHref && !currentHref.startsWith("#")) {
         link.setAttribute("href", buildCheckoutUrl(currentHref));
       }
     });
@@ -117,8 +148,9 @@ export function initAutoUtmForwarding() {
   // Executa logo após carregar e em intervalos para cobrir re-renderizações React
   updateCheckoutLinksInDom();
   window.addEventListener("DOMContentLoaded", updateCheckoutLinksInDom);
-  setTimeout(updateCheckoutLinksInDom, 500);
-  setTimeout(updateCheckoutLinksInDom, 1500);
+  setTimeout(updateCheckoutLinksInDom, 300);
+  setTimeout(updateCheckoutLinksInDom, 1000);
+  setTimeout(updateCheckoutLinksInDom, 2500);
 
   // Intercepta cliques como garantia máxima no momento exato do clique
   document.addEventListener(
@@ -130,7 +162,10 @@ export function initAutoUtmForwarding() {
       const href = target.getAttribute("href");
       if (
         href &&
-        (href.includes("pay.kiwify.com.br") ||
+        !href.startsWith("#") &&
+        (href.includes("pay.lowify.com.br") ||
+          href.includes("lowify.com.br") ||
+          href.includes("pay.kiwify.com.br") ||
           href.includes("kiwify.com.br") ||
           href.includes("hotmart.com") ||
           href.includes("eduzz.com"))
