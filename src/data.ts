@@ -130,19 +130,14 @@ export const whoIsItForCards = [
     desc: "Para quem precisa de atividades prontas para utilizar durante suas aulas.",
   },
   {
-    icon: "🎯",
-    title: "TREINADORES",
-    desc: "Para quem trabalha o desenvolvimento técnico e técnico-tático de seus atletas.",
+    icon: "🏓",
+    title: "JOGADORES DE TÊNIS DE MESA",
+    desc: "Para quem já joga e quer melhorar seu jogo com treinos estruturados, trabalhando técnica, deslocamento, combinações, tomada de decisão e situações reais de ponto.",
   },
   {
     icon: "🏢",
     title: "PROFESSORES DE CLUBES E ACADEMIAS",
     desc: "Para quem precisa variar os treinamentos sem precisar elaborar cada atividade do zero.",
-  },
-  {
-    icon: "🤝",
-    title: "PROFESSORES DE PROJETOS ESPORTIVOS",
-    desc: "Para quem trabalha com diferentes grupos de alunos e precisa de uma forma prática de organizar as sessões.",
   },
   {
     icon: "⚡",
@@ -222,7 +217,7 @@ export const totalBonusValue = "R$ 113,00";
 export const faqList: FaqItem[] = [
   {
     q: "As fichas são para iniciantes?",
-    a: "Não. O material foi desenvolvido principalmente para professores e treinadores que trabalham com alunos que já dominam os fundamentos básicos.",
+    a: "Não. O material foi desenvolvido para professores, treinadores e jogadores que já dominam os fundamentos básicos e querem evoluir com treinos estruturados, técnicos e táticos.",
   },
   {
     q: "As fichas são em vídeo?",

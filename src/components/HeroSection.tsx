@@ -18,8 +18,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick }) => {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 pt-5 sm:pt-7 lg:pt-8 pb-10 sm:pb-14 lg:pb-16">
         {/* Mobile Header */}
         <div className="lg:hidden relative z-10 text-center mb-4 px-1 max-w-xl mx-auto">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 font-bold text-xs uppercase tracking-wider mb-3 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 font-bold text-[10.5px] sm:text-[11px] uppercase tracking-wide mb-3 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
             MATERIAL ALINHADO À CBTM
           </span>
           <h1 className="font-black text-[#0A192F] tracking-tight leading-[1.14] text-2xl sm:text-3xl uppercase">
@@ -34,8 +34,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick }) => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Column */}
           <div className="relative z-10 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <div className="hidden lg:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 font-bold text-xs uppercase tracking-wider mb-4 xl:mb-5 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
+            <div className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80 font-bold text-[11px] uppercase tracking-wide mb-3.5 xl:mb-4 shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
               MATERIAL ALINHADO À CBTM
             </div>
 

@@ -25,14 +25,12 @@ export const WhoIsItForSection: React.FC<WhoIsItForSectionProps> = ({
           </p>
         </div>
 
-        {/* 5 Cards */}
-        <div className="mt-6 sm:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5">
+        {/* Cards */}
+        <div className="mt-6 sm:mt-10 grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-5 max-w-4xl mx-auto">
           {whoIsItForCards.map((card, idx) => (
             <div
               key={idx}
-              className={`relative rounded-2xl bg-[#F8FAFC] border border-slate-200/90 p-5 sm:p-6 shadow-xs hover:shadow-md hover:border-[#0066CC] hover:bg-white hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-start ${
-                idx === 4 ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
+              className="relative rounded-2xl bg-[#F8FAFC] border border-slate-200/90 p-5 sm:p-6 shadow-xs hover:shadow-md hover:border-[#0066CC] hover:bg-white hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-start"
             >
               <div className="flex items-center gap-3">
                 <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0066CC]/10 text-[#0066CC] flex items-center justify-center text-lg sm:text-xl shrink-0">
