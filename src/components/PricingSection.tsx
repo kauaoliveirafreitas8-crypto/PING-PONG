@@ -9,8 +9,8 @@ import {
 import { buildCheckoutUrl } from "../utils/utm";
 
 export const PricingSection: React.FC = () => {
-  const [basicUrl, setBasicUrl] = useState(checkoutLinks.basicPlan);
-  const [completeUrl, setCompleteUrl] = useState(checkoutLinks.completePlan);
+  const [basicUrl, setBasicUrl] = useState<string>(() => buildCheckoutUrl(checkoutLinks.basicPlan));
+  const [completeUrl, setCompleteUrl] = useState<string>(() => buildCheckoutUrl(checkoutLinks.completePlan));
   const [secondsLeft, setSecondsLeft] = useState(17 * 60);
   const [timerStarted, setTimerStarted] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -54,11 +54,6 @@ export const PricingSection: React.FC = () => {
 
     return () => clearInterval(interval);
   }, [timerStarted]);
-
-  const refreshUrls = () => {
-    setBasicUrl(buildCheckoutUrl(checkoutLinks.basicPlan));
-    setCompleteUrl(buildCheckoutUrl(checkoutLinks.completePlan));
-  };
 
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;
@@ -150,15 +145,11 @@ export const PricingSection: React.FC = () => {
 
               <a
                 id="basic-plan-cta"
-                href={basicUrl || "#"}
-                {...(basicUrl ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                onClick={(e) => {
-                  if (!basicUrl) {
-                    e.preventDefault();
-                  } else {
-                    refreshUrls();
-                  }
-                }}
+                href={basicUrl || checkoutLinks.basicPlan}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-href={basicUrl || checkoutLinks.basicPlan}
+                data-url={basicUrl || checkoutLinks.basicPlan}
                 className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-4 sm:py-4.5 min-h-[54px] rounded-full bg-slate-900 text-white font-bold uppercase tracking-wide text-sm sm:text-base hover:bg-slate-800 active:scale-[0.98] transition-all cursor-pointer shadow-xs"
               >
                 QUERO AGORA
@@ -257,15 +248,11 @@ export const PricingSection: React.FC = () => {
 
               <a
                 id="complete-plan-cta"
-                href={completeUrl || "#"}
-                {...(completeUrl ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                onClick={(e) => {
-                  if (!completeUrl) {
-                    e.preventDefault();
-                  } else {
-                    refreshUrls();
-                  }
-                }}
+                href={completeUrl || checkoutLinks.completePlan}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-href={completeUrl || checkoutLinks.completePlan}
+                data-url={completeUrl || checkoutLinks.completePlan}
                 className="mt-5 sm:mt-6 inline-flex w-full items-center justify-center gap-2 px-6 sm:px-8 py-4.5 sm:py-5 min-h-[58px] rounded-full bg-[#0066CC] text-white font-black uppercase tracking-wide text-sm sm:text-base shadow-[0_6px_0_0_#004F9F] sm:shadow-[0_7px_0_0_#004F9F] active:scale-[0.98] active:translate-y-[3px] active:shadow-[0_2px_0_0_#004F9F] hover:translate-y-[2px] hover:shadow-[0_4px_0_0_#004F9F] hover:bg-[#0055B3] transition-all cursor-pointer animate-cta-pulse"
               >
                 QUERO AGORA

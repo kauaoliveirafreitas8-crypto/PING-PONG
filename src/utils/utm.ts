@@ -171,7 +171,9 @@ export function initAutoUtmForwarding() {
           href.includes("eduzz.com"))
       ) {
         const enrichedUrl = buildCheckoutUrl(href);
-        target.setAttribute("href", enrichedUrl);
+        if (target.getAttribute("href") !== enrichedUrl) {
+          target.setAttribute("href", enrichedUrl);
+        }
       }
     },
     { capture: true }
